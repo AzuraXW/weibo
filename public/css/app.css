@@ -10951,3 +10951,20 @@ nav.navbar.navbar-expand-lg {
   margin-bottom: 20px;
 }
 
+.footer {
+  padding: 25px;
+}
+
+.footer img.brand-icon {
+  width: 30px;
+  margin-right: 10px;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+.footer .float-right {
+  float: right;
+}
+

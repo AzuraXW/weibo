@@ -15,3 +15,18 @@ body{
 nav.navbar.navbar-expand-lg{
     margin-bottom: 20px;
 }
+
+// 底部
+.footer{
+    padding: 25px;
+    img.brand-icon{
+        width: 30px;
+        margin-right: 10px;
+    }
+    a{
+        text-decoration: none;
+    }
+    .float-right{
+        float: right;
+    }
+}
