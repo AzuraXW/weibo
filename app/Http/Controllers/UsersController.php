@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -15,12 +14,19 @@ class UsersController extends Controller
         return view('users.create');
     }
 
-    public function store (Request $resuest) {
+    public function store (Request $request) {
         $this->validate($request, [
-            'name' => 'required|unique:users|max:50',
-            'email' => 'required|email|unqiue:users|max:255',
-            'password' => 'required|confirmed|min:6'
+            'name' => 'required|max:50',
+            'email' => 'required|email|max:255',
+            'password' => 'required|min:6'
+            // 'password_confirmation' => 'required|confirmed|min:6'
         ]);
-        return;
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password)
+        ]);
+        session()->flash('success', '欢迎，您将在这里开启一段新的路程~');
+        return redirect()->route('users.show', [$user]);
     }
 }
